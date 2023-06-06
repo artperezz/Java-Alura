@@ -1,6 +1,8 @@
 package br.com.alura.paradis_filmes.modelos;
 
-public class Serie extends Titulo{
+import br.com.alura.screnmatch.calculo.Classificavel;
+
+public class Serie extends Titulo implements Classificavel {
 
     private int temporadas;
     private int episodiosPorTemporada;
@@ -45,4 +47,8 @@ public class Serie extends Titulo{
     }
 
 
+    @Override
+    public int getClassificacao() {
+        return (int) pegaMedia() / 2 ;
+    }
 }
